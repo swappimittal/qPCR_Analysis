@@ -63,11 +63,11 @@ def main():
                 df = pd.read_excel(xls, sheet_name="Results By Well", header=None)
                 
                 # Get selected values
-                selected_values = get_selected_values(df)
+                Selected_Values = get_selected_values(df)
                 
                 # Display the list of selected values
                 st.write("Selected Values from Column 7 and Rows 8, 11, 14, ...")
-                st.write(selected_values)
+                st.write(Selected_Values)
                 combined_dict = combine_to_dict(array_list, Selected_Values)
                 st.write(combined_dict)
             else:
