@@ -12,19 +12,15 @@ def main():
             # Read Excel file
             xls = pd.ExcelFile(uploaded_file)
             sheet_names = xls.sheet_names
-            selected_sheet = st.selectbox("Select a sheet", sheet_names)
-            df = pd.read_excel(xls, sheet_name=selected_sheet)
             
-            # Display uploaded data
-            st.write("Uploaded Data (Sheet: {})".format(selected_sheet))
-            st.write(df)
-            
-            # Perform analysis
-            st.write("Data Analysis:")
-            st.write("Summary Statistics:")
-            st.write(df.describe())
-            
-            # You can perform more analysis here
+            # Iterate over each sheet
+            for sheet_name in sheet_names:
+                df = pd.read_excel(xls, sheet_name=sheet_name)
+                
+                # Display data for each sheet
+                st.write("Sheet Name: {}".format(sheet_name))
+                st.write(df)
+                st.write("---")
             
         except Exception as e:
             st.error("An error occurred: {}".format(e))
