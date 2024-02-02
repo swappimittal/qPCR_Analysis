@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-array_list = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'A11', 'A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'A19', 'A20', 'A21', 'A22', 'A23', 'A24',
+384_array_list = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'A11', 'A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'A19', 'A20', 'A21', 'A22', 'A23', 'A24',
  'B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B9', 'B10', 'B11', 'B12', 'B13', 'B14', 'B15', 'B16', 'B17', 'B18', 'B19', 'B20', 'B21', 'B22', 'B23', 'B24', 
  'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10', 'C11', 'C12', 'C13', 'C14', 'C15', 'C16', 'C17', 'C18', 'C19', 'C20', 'C21', 'C22', 'C23', 'C24',
  'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10', 'D11', 'D12', 'D13', 'D14', 'D15', 'D16', 'D17', 'D18', 'D19', 'D20', 'D21', 'D22', 'D23', 'D24', 
@@ -18,7 +18,7 @@ array_list = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'A11'
  'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10', 'P11', 'P12', 'P13', 'P14', 'P15', 'P16', 'P17', 'P18', 'P19', 'P20', 'P21', 'P22', 'P23', 'P24']
 
 
-def get_selected_values(df):
+def get_ribo_values(df):
     """
     Extracts values from column 7 and rows 8, 11, 14, ... of the DataFrame.
     
@@ -30,7 +30,7 @@ def get_selected_values(df):
     """
     # Extract values from column 7 and rows 8, 11, 14, ...
     selected_values = df.iloc[7::3, 6].tolist()
-    return selected_values
+    return ribo_values
 
 def combine_to_dict(array_list, Selected_Values):
     """
@@ -63,11 +63,11 @@ def main():
                 df = pd.read_excel(xls, sheet_name="Results By Well", header=None)
                 
                 # Get selected values
-                Selected_Values = get_selected_values(df)
+                ribo_Values = get_ribo_values(df)
                 
                 # Display the list of selected values
-                combined_dict = combine_to_dict(array_list, Selected_Values)
-                st.write(combined_dict)
+                ribo_dict = combine_to_dict(384_array_list, ribo_Values)
+                st.write(ribo_dict)
             else:
                 st.write("Sheet 'Results By Well' not found in the uploaded file.")
             
