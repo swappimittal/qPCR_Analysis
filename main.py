@@ -10,10 +10,13 @@ def main():
     if uploaded_file is not None:
         try:
             # Read Excel file
-            df = pd.read_excel(uploaded_file)
+            xls = pd.ExcelFile(uploaded_file)
+            sheet_names = xls.sheet_names
+            selected_sheet = st.selectbox("Select a sheet", sheet_names)
+            df = pd.read_excel(xls, sheet_name=selected_sheet)
             
             # Display uploaded data
-            st.write("Uploaded Data:")
+            st.write("Uploaded Data (Sheet: {})".format(selected_sheet))
             st.write(df)
             
             # Perform analysis
