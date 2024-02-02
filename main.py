@@ -1,6 +1,19 @@
 import streamlit as st
 import pandas as pd
 
+def get_selected_values(df):
+    """
+    Extracts values from column 7 and rows 8, 11, 14, ... of the DataFrame.
+    
+    Args:
+    - df (pd.DataFrame): DataFrame containing the data
+    
+    Returns:
+    - list: List of selected values
+    """
+    # Extract values from column 7 and rows 8, 11, 14, ...
+    selected_values = df.iloc[7::3, 6].tolist()
+    return selected_values
 def main():
     st.title("Excel Sheet Analysis")
     
@@ -17,8 +30,8 @@ def main():
                 # Read only the "Results By Well" sheet
                 df = pd.read_excel(xls, sheet_name="Results By Well", header=None)
                 
-                # Extract values from column 7 and rows 8, 11, 14, ...
-                selected_values = df.iloc[7::3, 6].tolist()
+                # Get selected values
+                selected_values = get_selected_values(df)
                 
                 # Display the list of selected values
                 st.write("Selected Values from Column 7 and Rows 8, 11, 14, ...")
