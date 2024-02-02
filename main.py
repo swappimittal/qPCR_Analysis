@@ -18,7 +18,7 @@ def main():
                 df = pd.read_excel(xls, sheet_name="Results", header=None)
                 
                 # Slice the DataFrame to extract desired portion
-                sliced_df = df.iloc[12:27, 3:26]  # Rows 13 to 28, Columns 4 to 27
+                sliced_df = df.iloc[14:29, 5:28]  # Rows 13 to 28, Columns 4 to 27
                 
                 # Display data for the sliced portion of the "Results" sheet
                 st.write("Sheet Name: Results (Rows 13-28, Columns 4-27)")
