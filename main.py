@@ -37,13 +37,13 @@ def main():
                 df = pd.read_excel(xls, sheet_name=sheet_name)
                 
                 # Find "<>" in each sheet
-                cell_numbers = find_string_in_sheet(df, "<>")
+                cell_numbers = find_string_in_sheet(df, "A")
                 
                 # Display data and cell numbers for each sheet
                 st.write("Sheet Name: {}".format(sheet_name))
                 st.write(df)
                 if cell_numbers:
-                    st.write("Cell numbers with '<>':")
+                    st.write("Cell numbers with 'A':")
                     for row, col in cell_numbers:
                         st.write("Row: {}, Column: {}".format(row, col))
                 else:
