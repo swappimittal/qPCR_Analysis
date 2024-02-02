@@ -18,7 +18,7 @@ def main():
                 df = pd.read_excel(xls, sheet_name="Results By Well", header=None)
                 
                 # Display data for the "Results By Well" sheet
-                st.write("Sheet Name: Results by Well")
+                st.write("Sheet Name: Results By Well")
                 st.write(df)
                 
             else:
