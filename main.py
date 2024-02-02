@@ -13,19 +13,16 @@ def main():
             xls = pd.ExcelFile(uploaded_file)
             sheet_names = xls.sheet_names
             
-            if "Results" in sheet_names:
-                # Read only the "Results" sheet
-                df = pd.read_excel(xls, sheet_name="Results", header=None)
+            if "Results by Well" in sheet_names:
+                # Read only the "Results by Well" sheet
+                df = pd.read_excel(xls, sheet_name="Results by Well", header=None)
                 
-                # Slice the DataFrame to extract desired portion
-                sliced_df = df.iloc[14:31, 4:31]  # Rows 13 to 28, Columns 4 to 27
-                
-                # Display data for the sliced portion of the "Results" sheet
-                st.write("Sheet Name: Results (Rows 13-28, Columns 4-27)")
-                st.write(sliced_df)
+                # Display data for the "Results by Well" sheet
+                st.write("Sheet Name: Results by Well")
+                st.write(df)
                 
             else:
-                st.write("Sheet 'Results' not found in the uploaded file.")
+                st.write("Sheet 'Results by Well' not found in the uploaded file.")
             
         except Exception as e:
             st.error("An error occurred: {}".format(e))
