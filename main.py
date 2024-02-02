@@ -22,7 +22,7 @@ def main():
                 st.write(df)
                 
             else:
-                st.write("Sheet 'Results by Well' not found in the uploaded file.")
+                st.write("Sheet 'Results By Well' not found in the uploaded file.")
             
         except Exception as e:
             st.error("An error occurred: {}".format(e))
