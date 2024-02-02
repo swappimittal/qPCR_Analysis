@@ -13,11 +13,11 @@ def main():
             xls = pd.ExcelFile(uploaded_file)
             sheet_names = xls.sheet_names
             
-            if "Results by Well" in sheet_names:
-                # Read only the "Results by Well" sheet
-                df = pd.read_excel(xls, sheet_name="Results by Well", header=None)
+            if "Results By Well" in sheet_names:
+                # Read only the "Results By Well" sheet
+                df = pd.read_excel(xls, sheet_name="Results By Well", header=None)
                 
-                # Display data for the "Results by Well" sheet
+                # Display data for the "Results By Well" sheet
                 st.write("Sheet Name: Results by Well")
                 st.write(df)
                 
