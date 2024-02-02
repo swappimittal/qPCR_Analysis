@@ -29,8 +29,8 @@ def get_ribo_values(df):
     - list: List of selected values
     """
     # Extract values from column 7 and rows 8, 11, 14, ...
-    selected_values = df.iloc[7::3, 6].tolist()
-    return ribo_values
+    ribo_Values = df.iloc[7::3, 6].tolist()
+    return ribo_Values
 
 def combine_to_dict(array_list, Selected_Values):
     """
