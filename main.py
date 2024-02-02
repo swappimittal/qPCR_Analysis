@@ -17,11 +17,11 @@ def main():
                 # Read only the "Results By Well" sheet
                 df = pd.read_excel(xls, sheet_name="Results By Well", header=None)
                 
-                # Extract values from column 6 and rows 7, 10, 13, ...
-                selected_values = df.iloc[6::3, 5].tolist()
+                # Extract values from column 7 and rows 8, 11, 14, ...
+                selected_values = df.iloc[7::3, 6].tolist()
                 
                 # Display the list of selected values
-                st.write("Selected Values from Column 6 and Rows 7, 10, 13, ...")
+                st.write("Selected Values from Column 7 and Rows 8, 11, 14, ...")
                 st.write(selected_values)
                 
             else:
@@ -32,8 +32,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
 array_list = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'A11', 'A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'A19', 'A20', 'A21', 'A22', 'A23', 'A24',
  'B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B9', 'B10', 'B11', 'B12', 'B13', 'B14', 'B15', 'B16', 'B17', 'B18', 'B19', 'B20', 'B21', 'B22', 'B23', 'B24', 
  'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10', 'C11', 'C12', 'C13', 'C14', 'C15', 'C16', 'C17', 'C18', 'C19', 'C20', 'C21', 'C22', 'C23', 'C24',
